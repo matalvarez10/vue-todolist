@@ -155,4 +155,15 @@ svg {
   color: #d10000;
   cursor: pointer;
 }
+@media (max-width: 768px) {
+  h2{
+    font-size: 0.8rem;
+    margin-left: 20px;
+    max-width: 50%;
+  }
+  .main-header{
+    justify-content: space-around !important;
+    gap: 0;
+  }
+}
 </style>

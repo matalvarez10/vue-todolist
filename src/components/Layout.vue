@@ -5,11 +5,12 @@ import { RouterLink, RouterView } from "vue-router";
 import { AllTasks, Task } from "@/utils/task";
 import { AllProjects, Project } from "@/utils/project";
 import { ref } from "vue";
-import { useRouter } from 'vue-router';
+import { useRouter } from "vue-router";
 
 const router = useRouter();
 const allTasksState = ref(new AllTasks([]));
 const allProjectsState = ref(new AllProjects([]));
+const menuToggle = ref(true);
 
 const handleAdd = (task: Task) => {
   const taskAux = new Task(
@@ -42,17 +43,31 @@ const handleUpdate = (
 const handleDeleteProject = (idProject: string) => {
   allProjectsState.value.removeProject(idProject);
   allTasksState.value.removeProjectsById(idProject);
-  router.push('/tasks/all');
+  router.push("/tasks/all");
 };
-const handleCompleted = (isCompleted:boolean,id: string) => {
-  allTasksState.value.updateCompleted(isCompleted,id)
+const handleCompleted = (isCompleted: boolean, id: string) => {
+  allTasksState.value.updateCompleted(isCompleted, id);
+};
+const handleMenuShow = () => {
+  menuToggle.value = true;
+};
+const handleMenuHide = () => {
+  menuToggle.value = false;
+};
+const handleMenuToggle = () => {
+  menuToggle.value = !menuToggle.value;
 };
 </script>
 
 <template>
   <div id="layout-content">
-    <HeaderComp />
+    <HeaderComp
+    @handleMenuHide="handleMenuHide"
+    @handleMenuShow="handleMenuShow"
+    @handleMenuToggle="handleMenuToggle"
+    />
     <Sidebar
+      v-if="menuToggle"
       @handleProjectAdd="handleProjectAdd"
       @handleDeleteProject="handleDeleteProject"
       :allProjects="allProjectsState.projects"

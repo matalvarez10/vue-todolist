@@ -85,13 +85,17 @@ table tr td:nth-child(5) {
 table tr td:nth-child(3) {
   width: 100px;
 }
+table tr td:nth-child(2) {
+  white-space: normal;
+  word-break: break-all;
+}
 
 tbody {
   background-color: #eeeee3;
 }
 
 table {
-  width: 80vw;
+  width: 80%;
   margin: 0 auto;
   border-collapse: collapse;
 
@@ -111,4 +115,10 @@ svg {
   text-decoration: line-through;
   color: gray;
 }
+
+@media (max-width: 768px) {
+    table tr td:nth-child(2) {
+      width: 100px; 
+    }
+  }
 </style>

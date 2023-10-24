@@ -33,7 +33,7 @@ library.add(fas);
     <font-awesome-icon
       v-if="hover"
       class="deleteWrapper"
-      @click="emit('forwardDeleteProject',project.id)"
+      @click="emit('forwardDeleteProject', project.id)"
       :icon="['fas', 'trash-can']"
     />
   </div>
@@ -65,6 +65,29 @@ library.add(fas);
 }
 svg {
   color: #d10000;
+}
 
+@media (max-width: 768px) {
+  .project-container {
+    font-size: 0.8rem;
+    margin: 2px 0 2px 5px;
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    position: relative;
+  }
+
+  .project-container > svg {
+    margin-top: 2px;
+  }
+  .deleteWrapper {
+    position: absolute;
+    right: 5px;
+    cursor: pointer;
+    margin-top: 2px;
+  }
+  svg {
+  font-size: 0.8rem;
+}
 }
 </style>

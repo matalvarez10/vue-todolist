@@ -206,4 +206,54 @@ svg {
   background-color: #6a5acd;
   color: white !important;
 }
+
+@media (max-width: 1024px) {
+  aside{
+    position: absolute;
+    left: 0;
+    height: 100%;
+    z-index: 10;
+  }
+}
+@media (max-width: 768px) {
+  aside {
+    width: 140px;
+  }
+  .icon {
+    padding: 5px;
+    height: 25px;
+  }
+  .icon > svg {
+    font-size: 1rem;
+    margin-left: 2px;
+  }
+  .custom-link {
+    font-size: 0.8rem;
+    margin-left: 6px;
+  }
+
+  #add-project {
+    font-size: 0.8rem;
+    margin: 15px 0 5px 5px;
+  }
+  #add-project > svg {
+    font-size: 0.8rem;
+  }
+  #project-input {
+    width: 95%;
+    height: 20px;
+    margin: 5px 0 5px 2px;
+    padding-left: 2px;
+    font-size: 0.6rem;
+  }
+
+  #project-confirm {
+    margin-left: 10px;
+    font-size: 0.6rem;
+    height: 20px;
+    width: 70%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+}
 </style>

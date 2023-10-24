@@ -36,14 +36,20 @@ const handleUpdate = () => {
         placeholder="Name of the task"
         v-model="taskAux.name"
         name="name"
+        required
       />
       <input
         type="text"
         placeholder="Description"
         v-model="taskAux.description"
         name="description"
+        required
       />
-      <input type="date" name="date" v-model="taskAux.date" />
+      <input type="date" 
+      name="date" 
+      v-model="taskAux.date"  
+      required
+      />
       <div id="wrapper">
         <button v-if="!isUpdate" type="submit" class="btnConfirm">
           Submit
@@ -68,10 +74,44 @@ const handleUpdate = () => {
   height: 200px;
   border-radius: 15px;
   position: absolute;
-  left: 40%;
-  top: 30%;
+  left: 50%;
+  top: 50%;
   z-index: 200;
   background-color: white;
+}
+
+#modal {
+  padding-top: 20px;
+  border: 0.5px solid #4a4a4a;
+  /* display: none; */
+  width: 500px;
+  height: 200px;
+  border-radius: 15px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 200;
+  background-color: white;
+  transform: translate(-50%, -50%);
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+  #modal {
+    width: 90%;
+    height: auto;
+    max-width: 400px;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 400px) {
+  #modal {
+    width: 90%;
+    height: auto;
+    max-width: 300px;
+    padding: 10px;
+  }
 }
 
 form {
