@@ -1,5 +1,8 @@
 # Vue Todo-List
 
+![Page Preview](todo-preview.PNG)
+
+[Ver Proyecto](https://matalvarez10.github.io/vue-todolist/)
 ## Descripción
 Este proyecto es una aplicación de lista de tareas pendientes (todo-list) hecha en Vue.js. La aplicación permite a los usuarios crear, marcar como completadas y eliminar tareas.
 
